@@ -1,16 +1,16 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Wabyking
+email: wabyking@163.com
 baseurl: "" # the subpath of your site, e.g. /blog
 #url: "http://yourdomain.com" # the base hostname & protocol for your site
 
 # Sidebar settings
-description: One sentence introducing yourself or what you do
+description: a coder, a poet, a runer, a kid.
 
 # Social icons
 facebook: username
 linkedin: username
-github: username
+github: wabyking
 deviantart: username
 codepen: username
 
