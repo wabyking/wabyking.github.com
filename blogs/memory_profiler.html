@@ -1015,20 +1015,21 @@ body .markdown-body
   }
 }
 </style><title>memory_profiler</title></head><body><article class="markdown-body"><h1 id="python-memory_profiler"><a name="user-content-python-memory_profiler" href="#python-memory_profiler" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Python如何做内存监控-memory_profiler</h1>
+<p>先通过三个步骤</p>
 <ul>
 <li>
-<p>第一步下载安装你的memory_profiler<br />
-        <pre>pip install git+<a href="https://github.com/pythonprofilers/memory_profiler.git">https://github.com/pythonprofilers/memory_profiler.git</a> </pre></p>
+<p>第一步下载安装你的memory_profiler</p>
+<p><pre>pip install git+<a href="https://github.com/pythonprofilers/memory_profiler.git">https://github.com/pythonprofilers/memory_profiler.git</a> </pre></p>
 </li>
 <li>
-<p>第二步在需要监控的python脚本里导入<br />
-    <pre>#from memory_profiler import profile </pre></p>
-</li>
-<li>第三步在你需要监控的函数上面加一个装饰器<br />
-    <pre><br />
-    @profile<br />
-    def forward(self, sentence):<br />
-        embeds = self.word_embeddings(sentence)<pre><code>x = embeds.view(sentence.size()[1], self.batch_size, -1)
+<p>第二步在需要监控的python脚本里导入</p>
+<p><pre>#from memory_profiler import profile </pre><br />
+- 第三步在你需要监控的函数上面加一个装饰器<br />
+<pre><br />
+@profile<br />
+def forward(self, sentence):<br />
+    embeds = self.word_embeddings(sentence)</p>
+<pre><code>x = embeds.view(sentence.size()[1], self.batch_size, -1)
 self.hidden= self.init_hidden()
 lstm_out, self.hidden = self.lstm(x, self.hidden)
 y  = self.hidden2label(lstm_out[-1])
@@ -1036,17 +1037,17 @@ return y
 </code></pre>
 </pre>
 
-</li>
-</ul>
 <p>给一个整体的例子哈， 见<a href="///D://code/git_index/wabyking.github.com/blogs/test.py">test.py</a><br />
-    <pre><br />
-    from memory_profiler import profile<br />
-    @profile<br />
-    def my_func():<br />
-        a = [1] * (10 <strong> 6)<br />
-        b = [2] * (2 * 10 </strong> 7)<br />
-        del b<br />
-        return a       <br />
-    if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:<br />
-        my_func()<br />
-    </pre></p></article></body></html>
+<pre><br />
+from memory_profiler import profile<br />
+@profile<br />
+def my_func():<br />
+    a = [1] * (10 <strong> 6)<br />
+    b = [2] * (2 * 10 </strong> 7)<br />
+    del b<br />
+    return a       <br />
+if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:<br />
+    my_func()<br />
+</pre></p>
+</li>
+</ul></article></body></html>

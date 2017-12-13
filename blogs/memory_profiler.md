@@ -1,9 +1,13 @@
 #Python如何做内存监控-memory_profiler
 
+先通过三个步骤
+
 - 第一步下载安装你的memory_profiler
-		<pre>pip install git+https://github.com/pythonprofilers/memory_profiler.git </pre>
+		
+	<pre>pip install git+https://github.com/pythonprofilers/memory_profiler.git </pre>
 
 - 第二步在需要监控的python脚本里导入
+	
 	<pre>#from memory_profiler import profile </pre>
 - 第三步在你需要监控的函数上面加一个装饰器
 	<pre>
@@ -18,7 +22,7 @@
         return y
 	</pre>
 
-给一个整体的例子哈， 见[test.py](test.py)
+	给一个整体的例子哈， 见[test.py](test.py)
 	<pre>
 	from memory_profiler import profile
 	@profile
